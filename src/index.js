@@ -45,33 +45,37 @@ export default class App extends PureComponent {
 
     return (
       <TabBarIOS
-        tintColor='red' // 当前被选中的标签图标以及文字颜色
+        tintColor='#ee735c' // 当前被选中的标签图标以及文字颜色
         unselectedItemTintColor='#000' // 当前没有被选中标签图标以及文字的颜色，ios10以上
-        barTintColor='yellow' // 标签栏背景颜色
+        // barTintColor='yellow' // 标签栏背景颜色
       >
         <Icon.TabBarItem  // 用Icon.TabBarItem代替原生的TabBarIOS.Item
-          title='list'
-          iconName='ios-videocam-outline'
+          title='list' // 图标下方的文字
+          iconName='ios-videocam-outline' 
           selectedIconName='ios-videocam' // 选中时候的图片，没有outline代表不透明了
           selected={selectedTab === 'list'} // 当前是否选中
           onPress={() => { this.tabOnPress(0) }}
         >
           <List />
         </Icon.TabBarItem>
-        <TabBarIOS.Item
+        <Icon.TabBarItem
           title='edit'
+          iconName='ios-recording-outline' 
+          selectedIconName='ios-recording'
           selected={selectedTab === 'edit'}
           onPress={() => { this.tabOnPress(1) }}
         >
           <Edit />
-        </TabBarIOS.Item>
-        <TabBarIOS.Item
+        </Icon.TabBarItem>
+        <Icon.TabBarItem
           title='account'
+          iconName='ios-more-outline'
+          selectedIconName='ios-more'
           selected={selectedTab === 'account'}
           onPress={() => { this.tabOnPress(2) }}
         >
           <Account />
-        </TabBarIOS.Item>
+        </Icon.TabBarItem>
       </TabBarIOS>
     );
   }
