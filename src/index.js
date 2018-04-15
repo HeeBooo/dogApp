@@ -23,7 +23,7 @@ export default class App extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'list',
+      selectedTab: 'list', // 当前所选中的tab
     };
   }
 
