@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableHighlight, Image, Dimensions } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
+import request from '../../common/request';
 
 const { width } = Dimensions.get('window'); // 获取屏幕宽度
 console.log(`屏幕宽度:${width}`);
@@ -69,6 +70,11 @@ class List extends PureComponent {
       </View>
     </TouchableHighlight>
   )
+
+  componentDidMount() {
+    const data = request.get('https://facebook.github.io/react-native/movies.json')
+  }
+  
 
   render() {
     const { listData } = this.state;
