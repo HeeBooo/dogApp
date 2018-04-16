@@ -10,7 +10,8 @@ class List extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      listData: [
+      // FlatList组件数据每个子需要一个key值
+      listData: [ 
         {
           id: '1',
           key: '1',
